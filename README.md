@@ -2,10 +2,11 @@
 Aplikasi CLI Sederhana Menggunakan Python Fundamental.
 
 # Fitur
-Tambah Tugas
-Lihat Tugas
-Hapus Tugas
-Keluar Dari Todo_list
+- Tambah Tugas
+- Lihat Tugas
+- Update Tugas
+- Hapus Tugas
+- Keluar
 
 # Teknologi
 Python
