@@ -3,8 +3,9 @@ def todo_menu():
     print("\n====== TO DO LIST =====")
     print("1. Tambah Tugas")
     print("2. Lihat Tugas")
-    print("3. Hapus Tugas")
-    print("4. Keluar")
+    print("3. Update Tugas")
+    print("4. Hapus Tugas")
+    print("5. Keluar")
     print("=======================")
 
 def tambah_tugas():
@@ -14,14 +15,28 @@ def tambah_tugas():
 
 def lihat_tugas():
     if len(tugas_list) == 0:
-        print("❌ TIdak Ada Yang Bisa Dilihat, Ayo Tambahkan Terlebih Dahulu")
+        print("❌ Tidak Ada Yang Bisa Dilihat, Ayo Tambahkan Terlebih Dahulu")
     else: 
         for i in range(len(tugas_list)):
             print(f"{i+1}. {tugas_list[i]}") 
     
-def hapus_tugas():
-   if len(tugas_list) == 1: 
+def update_tugas():
         lihat_tugas()
+
+        update = int(input("Kamu Mau Ubah Yang mana nih? : "))
+        if 1 <= update <= len(tugas_list):
+            update_list = input("Mau Di Ganti Apa? : ")
+            tugas_list[update - 1] = update_list
+
+            print("Berhasil Di ubah")
+        else:
+            print("Pilih Yang Ada Di Atas Aja Yaa!!")
+
+
+def hapus_tugas():
+   if len(tugas_list) > 0: 
+        lihat_tugas()
+
         hapus = int(input("Yang Mana Yang Mau Kamu Hapus Nih? : "))
         tugas_list.pop(hapus - 1)
         print("Tugas Berhasil Dihapus")
@@ -38,8 +53,10 @@ while True:
     elif menu == "2":
         lihat_tugas()
     elif menu == "3":
-        hapus_tugas()
+        update_tugas()
     elif menu == "4":
+        hapus_tugas()
+    elif menu == "5":
         print("Terimakasih Sudah Menggunakan TODO LIST INI 🤍 !! ")
         break
     elif menu == "":
